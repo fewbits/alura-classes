@@ -1,8 +1,8 @@
-# alura-classes
+# Alura Classes
 
 Public notes and labs from [**Alura**](https://www.alura.com.br)'s courses and classes.
 
-> Sponsored by: [**PayGo Pagamentos**](https://www.paygo.com.br)
+> Special thanks to: [**PayGo Pagamentos**](https://www.paygo.com.br)
 
 ___
 
