@@ -1,0 +1,28 @@
+Vagrant.configure("2") do |config|
+
+  config.vm.box = "ubuntu/bionic64"
+  config.vm.synced_folder ".", "/vagrant", disabled: true
+  config.vm.synced_folder "./config", "/config"
+
+  config.vm.define "database" do |database|
+    database.vm.network "private_network", ip: "192.168.33.11"
+  
+    database.vm.provision "ansible" do |ansible|
+      ansible.playbook = "./config/ansible/playbook-mysql.yml"
+    end
+  
+  end
+
+  config.vm.define "application" do |application|
+    application.vm.network "private_network", ip: "192.168.33.12" 
+    application.vm.provision "shell",
+      inline: "apt-get update && apt-get install -y puppet"
+
+    application.vm.provision "puppet" do |puppet|
+      puppet.manifests_path = "./config/manifests"
+      puppet.manifest_file = "application.pp"
+    end
+
+  end
+
+end
