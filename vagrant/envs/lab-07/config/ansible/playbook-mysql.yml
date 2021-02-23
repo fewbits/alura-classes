@@ -1,0 +1,42 @@
+- name: MySQL Config
+  hosts: database
+
+  handlers:
+    - name: mysql restart
+      service:
+        name: mysql
+        state: restarted
+      become: yes
+
+  tasks:
+
+    - name: Install MySQL Server
+      apt:
+        update_cache: yes
+        cache_valid_time: 3600 # 1 hour
+        name:
+          - mysql-server-5.7
+          - python3-mysqldb
+        state: latest
+      become: yes
+
+    - name: Create MySQL User
+      mysql_user:
+        login_user: root
+        name: phpuser
+        password: pass
+        priv: '*.*:ALL'
+        host: '%'
+        state: present
+      become: yes
+
+    - name: MySQL Config File
+      copy:
+        src: ../mysqld.cnf
+        dest: /etc/mysql/mysql.conf.d/mysqld.cnf
+        owner: root
+        group: root
+        mode: 0644
+      become: yes
+      notify:
+        - mysql restart

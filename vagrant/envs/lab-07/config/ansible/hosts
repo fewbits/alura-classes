@@ -1,0 +1,19 @@
+# Database servers
+[database]
+192.168.33.11
+
+[database:vars]
+ansible_ssh_private_key_file=.vagrant/machines/database/virtualbox/private_key
+
+# Application servers
+[application]
+192.168.33.12
+
+[application:vars]
+ansible_ssh_private_key_file=.vagrant/machines/application/virtualbox/private_key
+
+# Common variables
+[all:vars]
+ansible_user=vagrant
+ansible_python_interpreter=/usr/bin/python3
+ansible_ssh_common_args='-o StrictHostKeyChecking=no'
