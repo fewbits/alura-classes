@@ -10,7 +10,8 @@ ___
 
 ### Courses
 
-- [ ] [Vagrant](./vagrant)
+- [X] [Vagrant](./vagrant)
+- [ ] [Ansible](./ansible)
 
 ### Formations
 
