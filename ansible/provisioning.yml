@@ -1,0 +1,19 @@
+---
+- name: WordPress Provisioning
+  hosts: all
+  tasks:
+    - name: PHP5 Package
+      apt:
+        name: php5
+        state: latest
+      become: yes
+    - name: Apache2 Package
+      apt:
+        name: apache2
+        state: latest
+      become: yes
+    - name: ModPHP Package
+      apt:
+        name: libapache2-mod-php5
+        state: latest
+      become: yes
