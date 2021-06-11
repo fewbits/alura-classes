@@ -1,0 +1,21 @@
+<meta charset="UTF-8">
+
+<script>
+    var ano = 2021;
+
+    var flavioNasc  = 1977;
+    var joaquimNasc = 1996;
+    var barneyNasc  = 1976;
+
+    var flavioIdade   = ano - flavioNasc;
+    var joaquimIdade  = ano - joaquimNasc;
+    var barneyIdade   = ano - barneyNasc;
+    
+    document.write("Flávio tem "  + flavioIdade   + " anos.<br />");
+    document.write("Joaquim tem " + joaquimIdade  + " anos.<br />");
+    document.write("Barney tem "  + barneyIdade   + " anos.<br />");
+    document.write("<br />")
+
+    var media = Math.round((flavioIdade+joaquimIdade+barneyIdade)/3);
+    document.write("A média das idades é: " + media + ".");
+</script>

@@ -10,7 +10,8 @@ ___
 
 ### Courses
 
-- [ ] [Vagrant](./vagrant)
+- [ ] [Vagrant](./vagrant) (2021/02)
+- [ ] [Lógica I](./logica-1) (???)
 
 ### Formations
 
