@@ -1,21 +1,26 @@
 <meta charset="UTF-8">
 
 <script>
-    var ano = 2021;
 
-    var flavioNasc  = 1977;
-    var joaquimNasc = 1996;
-    var barneyNasc  = 1976;
+  function pulaLinha() {
+    document.write("<br />");
+  }
 
-    var flavioIdade   = ano - flavioNasc;
-    var joaquimIdade  = ano - joaquimNasc;
-    var barneyIdade   = ano - barneyNasc;
-    
-    document.write("Flávio tem "  + flavioIdade   + " anos.<br />");
-    document.write("Joaquim tem " + joaquimIdade  + " anos.<br />");
-    document.write("Barney tem "  + barneyIdade   + " anos.<br />");
-    document.write("<br />")
+  function mostra(mensagem) {
+    document.write(mensagem);
+    pulaLinha();
+  }
 
-    var media = Math.round((flavioIdade+joaquimIdade+barneyIdade)/3);
-    document.write("A média das idades é: " + media + ".");
+  var ano           = 2021;
+  var flavioIdade   = ano - 1977;
+  var joaquimIdade  = ano - 1996;
+  var barneyIdade   = ano - 1976;
+  var media         = Math.round((flavioIdade+joaquimIdade+barneyIdade)/3);
+
+  mostra("Flávio tem "  + flavioIdade   + " anos.");
+  mostra("Joaquim tem " + joaquimIdade  + " anos.");
+  mostra("Barney tem "  + barneyIdade   + " anos.");
+  pulaLinha();
+  mostra("A média das idades é: " + media + ".");
+
 </script>
