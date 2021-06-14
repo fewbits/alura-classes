@@ -2,18 +2,17 @@
 - name: WordPress Provisioning
   hosts: all
   tasks:
-    - name: PHP5 Package
+    - name: Instala pacotes de dependência do sistema operacional
       apt:
-        name: php5
-        state: latest
-      become: yes
-    - name: Apache2 Package
-      apt:
-        name: apache2
-        state: latest
-      become: yes
-    - name: ModPHP Package
-      apt:
-        name: libapache2-mod-php5
+        name:
+        - apache2
+        - libapache2-mod-php5
+        - libssh2-php
+        - mysql-server-5.6
+        - php5
+        - php5-gd
+        - php5-mcrypt
+        - php5-mysql
+        - python-mysqldb
         state: latest
       become: yes
