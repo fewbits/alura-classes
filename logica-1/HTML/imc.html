@@ -27,6 +27,18 @@
   mostra("IMC do "    + nomeUsuario + ": "  + imcUsuario);
 
   pulaLinha();
+
+  if(imcUsuario > 35) {
+    mostra("Seu IMC está acima do que é considerado ideal. Procure um médico.");
+  }
+  else if(imcUsuario < 18.5) {
+    mostra("Seu IMC está abaixo do que é considerado ideal. Procure um médico.");
+  }
+  else {
+    mostra("Seu IMC está dentro do que é considerado ideal.");
+  }
+
+  pulaLinha();
   mostra("Comparativo...");
 
   var imcEric   = calculaIMC(70, 1.75);
