@@ -1,0 +1,42 @@
+<meta charset="UTF-8">
+
+<script>
+
+  // Funções
+  function pulaLinha() {
+    document.write("<br />");
+  }
+
+  function mostra(mensagem) {
+    document.write(mensagem);
+    pulaLinha();
+  }
+
+  function calculaIMC(peso, altura) {
+    var imc = Math.round(peso / (altura * altura));
+    return imc;
+  }
+
+  var nomeUsuario   = prompt("Qual o seu nome?");
+  var pesoUsuario   = prompt("OK " + nomeUsuario + ". E o seu peso?");
+  var alturaUsuario = prompt("Por último, e sua altura? (ex: 1.70)");
+  var imcUsuario    = calculaIMC(pesoUsuario, alturaUsuario);
+
+  mostra("Peso do "   + nomeUsuario + ": "  + pesoUsuario);
+  mostra("Altura do " + nomeUsuario + ": "  + alturaUsuario);
+  mostra("IMC do "    + nomeUsuario + ": "  + imcUsuario);
+
+  pulaLinha();
+  mostra("Comparativo...");
+
+  var imcEric   = calculaIMC(70, 1.75);
+  mostra("O IMC do Eric é: " + imcEric + ".");
+  
+  var imcAmigo  = calculaIMC(68, 1.72);
+  mostra("O IMC do amigo é: " + imcAmigo + ".");
+  
+  var imcTia    = calculaIMC(50, 1.62);
+  mostra("O IMC da tia é: " + imcTia + ".");
+
+
+</script>
