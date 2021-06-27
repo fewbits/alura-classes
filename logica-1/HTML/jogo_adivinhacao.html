@@ -12,23 +12,37 @@
     pulaLinha();
   }
 
-  function sortearNumero() {
-    return Math.round(Math.random() * 10);
+  function sortearNumero(maximo) {
+    return Math.round(Math.random() * maximo);
   }
 
-  var numeroPensado = sortearNumero();
+  var dificuldade = 100;
+  var tentativas  = 0;
+
+  var numeroPensado = sortearNumero(dificuldade);
   console.log(numeroPensado);
 
-  var chute = parseInt(prompt("Digite um número de 1 a 10"));
+  var chute = parseInt(prompt("Digite um número entre 1 e " + dificuldade + "."));
+  tentativas = tentativas + 1;
 
-  if(numeroPensado > chute) {
-    mostra("Você chutou " + chute + ". Está errado. O número correto é MAIOR.");
+  while(chute != numeroPensado) {
+    
+    tentativas = tentativas + 1;
+
+    if(numeroPensado > chute) {
+      chute = parseInt(prompt("Você chutou " + chute + ". Está errado. O número correto é MAIOR."));
+    }
+    else if(numeroPensado < chute) {
+      chute = parseInt(prompt("Você chutou " + chute + ". Está errado. O número correto é MENOR."));
+    }
+    else {
+      chute = parseInt(prompt("Isso é um número? Tente novamente. Digite um número entre 1 e " + dificuldade + "."));
+    }
+
   }
-  else if(numeroPensado < chute) {
-    mostra("Você chutou " + chute + ". Está errado. O número correto é MENOR.");
-  }
-  else {
-    mostra("Você acertou! O número correto é " + numeroPensado + ".");
-  }
+
+  mostra("Você acertou! O número correto é " + numeroPensado + ".");
+  mostra("Você precisou de " + tentativas + " tentativas.");
+  mostra("Dificuldade: " + dificuldade);
 
 </script>

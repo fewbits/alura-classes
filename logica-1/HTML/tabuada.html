@@ -1,0 +1,36 @@
+<meta charset="UTF-8">
+
+<script>
+
+  // Funções
+  function pulaLinha() {
+    document.write("<br />");
+  }
+
+  function mostra(mensagem) {
+    document.write(mensagem);
+    pulaLinha();
+  }
+
+  var tabuada       = 7;
+  var tamanho       = 10;
+  var multiplicador = 1;
+
+  mostra("Loop while")
+  while (multiplicador <= tamanho) {
+    resultado = tabuada * multiplicador;
+    mostra(tabuada + " x " + multiplicador + " = " + resultado);
+    multiplicador++;
+  }
+  mostra("Fim");
+
+  pulaLinha();
+
+  mostra("Loop for");
+  for(var multiplicador = 1; multiplicador <= tamanho; multiplicador++) {
+    resultado = tabuada * multiplicador;
+    mostra(tabuada + " * " + multiplicador + " = " + resultado);
+  }
+  mostra("Fim");
+
+</script>

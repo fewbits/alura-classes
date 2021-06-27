@@ -1,0 +1,25 @@
+<meta charset="UTF-8">
+
+<script>
+
+  // Funções
+  function pulaLinha() {
+    document.write("<br />");
+  }
+
+  function mostra(mensagem) {
+    document.write(mensagem);
+    pulaLinha();
+  }
+  
+  var linhas  = parseInt(prompt("Digite a quantidade de linhas"));
+  var colunas = parseInt(prompt("Digite a quantidade de colunas"));
+  
+  for(var contadorLinhas = 0; contadorLinhas < linhas ; contadorLinhas++) {
+    for(var contadorColunas = 0; contadorColunas < colunas ; contadorColunas++) {
+      document.write("*");
+    }
+    document.write("<br />");
+  }
+
+</script>
